@@ -1,1 +1,1 @@
-Learning the basics of the shell.
+learning about the shell
