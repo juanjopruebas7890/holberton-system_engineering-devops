@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# scripts that displays some info
+for i in *
+do
+	echo $(basename "$i") | cut -d"-" -f2
+done
