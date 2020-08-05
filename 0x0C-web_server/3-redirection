@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# steps to configure NGINX
+# Config NGINX server to redirect
+sudo apt-get update -y
+sudo apt-get install nginx -y
+sudo echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo service nginx start
+new_string="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "26i $new_string" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
