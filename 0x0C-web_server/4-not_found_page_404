@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# steps to configure NGINX
+# Config NGINX server to redirect
+# Config NGINX to have error 404
+sudo apt-get update -y
+sudo apt-get install nginx -y
+sudo echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo service nginx start
+sudo echo "Ceci n'est pas une page | | sudo tee /usr/share/nginx/html/404.html
+str="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+sudo sed -i "27i $str" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
