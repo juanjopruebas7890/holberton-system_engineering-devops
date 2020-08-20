@@ -2,5 +2,5 @@
 # fix that NGINX is running as nginx user
 chmod 204 /etc/nginx/nginx.conf
 sed -i "s/80/8080/" /etc/nginx/sites-available/default
-pkil -f apache2
+pkill -f apache2
 sudo -u nginx service start
