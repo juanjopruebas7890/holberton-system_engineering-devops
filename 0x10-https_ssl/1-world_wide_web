@@ -3,7 +3,7 @@
 
 dom=$1
 
-fucntion displayAll() {
+function displayAll() {
     for arg; do
 	echo -n "The subdomain $arg is a "
 	dig "$arg"."$dom" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{print $4 " record and points to " $5}'
